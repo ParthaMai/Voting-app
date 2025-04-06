@@ -1,0 +1,5 @@
+# ignore node_modules directory
+node_modules/
+planning.txt
+
+# other entries.....
