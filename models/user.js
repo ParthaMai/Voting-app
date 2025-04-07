@@ -22,10 +22,10 @@ const userSchema= new mongoose.Schema ({
         type: String,
         require: true
     },
-    aaharCardNumber: {
-        type: Number,
+    aadharCardNumber: {
+        type: String,
         require: true,
-        unique: true //means email always unique .
+        // unique: true //means cardno is always unique .
     },
     password: {
         type : String,

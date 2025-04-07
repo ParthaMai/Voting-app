@@ -35,14 +35,14 @@ router.post('/signup', async(req,res)=>{
 router.post('/login', async(req,res)=>{
   try{
       //Extract aaharCardNumber and password form req.body
-      const{aaharCardNumber,password}=req.body;
+      const{aadharCardNumber,password}=req.body;
 
       // Find the user by aaharCardNumber 
-      const user= await user.findOne({aaharCardNumber: aaharCardNumber});
+      const user= await user.findOne({aadharCardNumber: aadharCardNumber});
 
       //if user doesnot exist and password does not match, return err
       if(!user || !(await user.comparePassword(password))){ // comparepassword is not inbuild functin it is userdefined in 
-        return res.status(401).json({error:"invailid aaharCardNumber or password"});
+        return res.status(401).json({error:"invailid aadharCardNumber or password"});
       }
       const payload={
         id:user.id,

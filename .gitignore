@@ -1,5 +1,5 @@
 # ignore node_modules directory
 node_modules/
+.env
 planning.txt
-
 # other entries.....
