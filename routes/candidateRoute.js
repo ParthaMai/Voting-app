@@ -144,4 +144,27 @@ router.post('/vote/:candidateID',jwtAuthMiddleware, async(req,res) =>{
 });
 
 
+// vote count
+router.get('/vote/count', async (req,res)=>{
+    try{
+        //find all candidate and short them by vote count
+        const Candidate= await candidate.find().sort({voteCount: 'desc'});
+
+        // Map the candidates to only return their name and voteCount
+        const voteRecord = Candidate.map((data)=>{
+            return {
+                party: data.party,
+                count: data.voteCount
+            }
+        });
+
+        return res.status(200).json(voteRecord);
+
+    }catch(err){
+        console.log(err);
+        res.status(400).json({error:"internal server erorr"});
+    }
+})
+
+
 module.exports=router;
