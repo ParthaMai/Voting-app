@@ -25,7 +25,7 @@ const userSchema= new mongoose.Schema ({
     aadharCardNumber: {
         type: String,
         require: true,
-        // unique: true //means cardno is always unique .
+        unique: true //means cardno is always unique .
     },
     password: {
         type : String,

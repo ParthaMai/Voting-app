@@ -19,7 +19,7 @@ const candidateSchema= new mongoose.Schema ({
     votes: [
         {
             user: {
-                type: mongoose.Schema.Type.ObjectId,
+                type: mongoose.Schema.Types.ObjectId,
                 ref: 'user',
                 require: true
             },
