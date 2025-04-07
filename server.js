@@ -6,8 +6,6 @@ require('dotenv').config();
 const bodyParser= require('body-parser');
 app.use(bodyParser.json()); // req body
 
-// const {jwtAuthMiddleware} = require('./jwt');
-
 //Import the person files
 const userRoutes=require('./routes/userRoute');
 const candidateRoutes=require('./routes/candidateRoute');
@@ -15,6 +13,8 @@ const candidateRoutes=require('./routes/candidateRoute');
 //Use the routers
 app.use('/user',userRoutes);
 app.use('/candidate',candidateRoutes);
+
+
 
 const PORT=process.env.PORT || 3000;
 
